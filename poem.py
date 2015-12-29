@@ -50,7 +50,7 @@ class bnfDictionary:
 				line = line.capitalize()
 				capitalize = False
 			if isTitle:
-				mydate = datetime.datetime.now()
+				mydate = datetime.datetime.fromtimestamp(0)
 				
 				newPoem = newPoem + "<h1>" + line + "</h1>\n<h2>by A Computer, %s</h2>\n"%mydate.strftime("%B %d %Y")
 				isTitle = False
