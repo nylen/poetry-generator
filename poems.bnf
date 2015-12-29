@@ -29,7 +29,7 @@
 <pprep>=in|amid|around|within|in front of|with|next to|inside|outside|among
 <nprep>=in|behind|under|against|in the middle of|outside|inside|among
 <pfeeling>=happiness|joy|love|tiredness|pride|honor|respect|purity|wonder|felicity
-<nfeeling>=agony|fear|anger|beligerance|confusion|animosity|embarassement|sorrow
+<nfeeling>=agony|fear|anger|belligerence|confusion|animosity|embarassement|sorrow
 <person>=man|woman|goddess|god|giant|one|son|daughter|father|mother|cousin|uncle|aunt|sailor|fisherman|astronaunt|child|gentleman|lady|elder
 <place>=region|land|area|vicinity|jungle|thicket|field|heights|universe|university|night|moonlight evening|divisions|archipeligos
 <bodypart>=mouth|hand|arm|leg|eye|lips|nose|finger|ears|feet|curves|brow|hips|eyelids|tail|fingernails|toe|shoulder|eyeballs|heart|brain|breath
@@ -76,7 +76,7 @@
 <pprep>=in|amid|around|within|in front of|with|next to|inside|outside|among
 <nprep>=in|behind|under|against|in the middle of|outside|inside|among
 <pfeeling>=happiness|joy|love|tiredness|pride|honor|respect|purity|wonder|felicity
-<nfeeling>=agony|fear|anger|beligerance|confusion|animosity|embarassement|sorrow
+<nfeeling>=agony|fear|anger|belligerence|confusion|animosity|embarassement|sorrow
 <person>=man|woman|goddess|god|giant|one|son|daughter|father|mother|cousin|uncle|aunt|sailor|fisherman|astronaunt|child|gentleman|lady|elder
 <place>=region|land|area|vicinity|jungle|thicket|field|heights|universe|university|night|moonlight evening|divisions|archipeligos
 <bodypart>=mouth|hand|arm|leg|eye|lips|nose|finger|ears|feet|curves|brow|hips|eyelids|tail|fingernails|toe|shoulder|eyeballs|heart|brain|breath
