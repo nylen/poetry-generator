@@ -1,7 +1,7 @@
-from random import randint
-import sys
 import datetime
-#import language_check
+import os
+import random
+import sys
 
 class bnfDictionary:
 
@@ -17,7 +17,7 @@ class bnfDictionary:
 				
 	def generate(self,key,num):
 		gram = self.grammar[key]
-		i = randint(0,len(gram)-1)
+		i = random.randint(0,len(gram)-1)
 		string = ""
 		if "<" not in gram[i]:
 			string = gram[i]
@@ -94,16 +94,16 @@ class bnfDictionary:
 					if "." in lastChar or "-" in lastChar or "," in lastChar or "!" in lastChar or "?" in lastChar or "!" in lastChar:
 						pass
 					else:
-						if randint(0,20)<2:
+						if random.randint(0,20)<2:
 							newPoem = newPoem + line.replace('<br />','?<br />\n')
 							capitalize = True
-						elif randint(0,20)<2:
+						elif random.randint(0,20)<2:
 							newPoem = newPoem + line.replace('<br />','.<br />\n')
 							capitalize = True
-						elif randint(0,20)<2:
+						elif random.randint(0,20)<2:
 							newPoem = newPoem + line.replace('<br />','!<br />\n')
 							capitalize = True
-						elif randint(0,20)<2:
+						elif random.randint(0,20)<2:
 							newPoem = newPoem + line.replace('<br />',',<br />\n')
 						else:
 							newPoem = newPoem + line + "\n"				
@@ -116,11 +116,20 @@ class bnfDictionary:
 		return newPoem
 	
 bnf = bnfDictionary('poems.bnf')
-'''
-if "mushy" in sys.argv[1]:
-	print(bnf.generatePretty('<mushypoem>'))
-else:
-	print(bnf.generatePretty('<poem>'))
-''' 
 
+def generate_poem(poemtype, hex_seed = None):
+	if not hex_seed:
+		hex_seed = os.urandom(8).encode('hex')
 
+	random.seed(int(hex_seed, 16))
+
+	return (
+		bnf.generatePretty('<' + poemtype + '>')
+		+ '\n<h2>/' + poemtype + '/' + hex_seed + '</h2>'
+	)
+
+if __name__ == '__main__':
+	poemtype = 'poem'
+	if 'mushy' in sys.argv[1:]:
+		poemtype = 'mushypoem'
+	print generate_poem(poemtype)

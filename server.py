@@ -4,7 +4,6 @@ from time import sleep
 from poem import *
 
 import os
-import random
 import re
 
 
@@ -136,7 +135,7 @@ bottom: 0;
 pages = {
 	 'index' : html_template % (
 			"""
-			<div id="poem">%(poem)s <h2>%(url)s</h2></div>
+			<div id="poem">%(poem)s</div>
 
 			"""),
 }
@@ -191,12 +190,8 @@ def redirect_to_poem(environ, start_response):
 
 
 def show_poem(environ, start_response, router):
-	# Ensure that we can always get back to a given poem
-	random.seed(int(router.params['seed'], 16))
-
 	response_body = pages['index'] % {
-		'poem': bnf.generatePretty('<' + router.params['type'] + '>'),
-		'url': router.url
+		'poem': generate_poem(router.params['type'], router.params['seed'])
 	}
 
 	start_response('200 OK', [
