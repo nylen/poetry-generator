@@ -3,7 +3,7 @@ import os
 import socket
 
 APP_NAME = 'poetry-generator'
-APP_URL = 'www.poetrygenerator.ninja'
+APP_URL = 'nylen.tv/poem'
 APP_PORT = 8002
 
 try:
